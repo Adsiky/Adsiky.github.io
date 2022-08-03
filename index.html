@@ -1,14 +1,20 @@
 <html>
 <head>
+  
     <title>TUGAS PROJECT</title>
 </head>
-<body bgcolor="#FFD966">
+<audio autoplay="true">
+    <source src="audio/lagu.mp3" type="audio/mpeg">
+    Browsermu tidak mendukung tag audio, upgrade donk!
+</audio>
+</head>
 
-<br>
-<br>
+<body bgcolor="87CEFA">
 <h2>
-CERTIFIED COMPETENCY<br>
-DEVELOPMENT AND PROFESSIONAL PROGRAM<br>
+  <br>
+COMPETENCY
+DEVELOPMENT AND PROGRAM
+<br>
 </h2>
 </center>
 <hr>
@@ -17,7 +23,7 @@ DEVELOPMENT AND PROFESSIONAL PROGRAM<br>
 <table width="320" border="0">
 <tr>
     <td width="116"><b>Nama</b></td>
-    <td width="185"><b>:Rizki Adiasa</b></td>
+    <td width="185"><b>: Rizki Adiasa</b></td>
   </tr>
 <tr>
     <td><b>Kelas</b></td>
@@ -38,13 +44,182 @@ DEVELOPMENT AND PROFESSIONAL PROGRAM<br>
     <td><b>: Close Book</b></td>
   </tr>
 </table>
-</b>
 </center>
-<br>
 <hr>
 <br>
 
 <p>
+  <style type="text/css">
+
+#topbar{
+
+position:absolute;
+
+padding-left:0%;padding-top:0%;
+
+background-color: #FFFFFF;
+
+width: 340px;heigth:280px;
+
+visibility: hidden;
+
+z-index: 100;
+
+}
+
+</style> <script type="text/javascript">
+
+var persistclose=0 //set to 0 or 1. 1 means once the bar is manually closed, it will remain closed for browser session
+
+var startX = 30 //set x offset of bar in pixels
+
+var startY = 5 //set y offset of bar in pixels
+
+var verticalpos="fromtop" //enter "fromtop" or "frombottom"
+
+function iecompattest(){
+
+return (document.compatMode && document.compatMode!="BackCompat")? document.documentElement : document.body
+
+}
+
+function get_cookie(Name) {
+
+var search = Name + "="
+
+var returnvalue = "";
+
+if (document.cookie.length > 0) {
+
+offset = document.cookie.indexOf(search)
+
+if (offset != -1) {
+
+offset += search.length
+
+end = document.cookie.indexOf(";", offset);
+
+if (end == -1) end = document.cookie.length;
+
+returnvalue=unescape(document.cookie.substring(offset, end))
+
+}
+
+}
+
+return returnvalue;
+
+}
+
+function closebar(){
+
+if (persistclose)
+
+document.cookie="remainclosed=1"
+
+document.getElementById("topbar").style.visibility="hidden"
+
+}
+
+function staticbar(){
+
+barheight=document.getElementById("topbar").offsetHeight
+
+var ns = (navigator.appName.indexOf("Netscape") != -1) || window.opera;
+
+var d = document;
+
+function ml(id){
+
+var el=d.getElementById(id);
+
+if (!persistclose || persistclose && get_cookie("remainclosed")=="")
+
+el.style.visibility="visible"
+
+if(d.layers)el.style=el;
+
+el.sP=function(x,y){this.style.left=x+"px";this.style.top=y+"px";};
+
+el.x = startX;
+
+if (verticalpos=="fromtop")
+
+el.y = startY;
+
+else{
+
+el.y = ns ? pageYOffset + innerHeight : iecompattest().scrollTop + iecompattest().clientHeight;
+
+el.y -= startY;
+
+}
+
+return el;
+
+}
+
+window.stayTopLeft=function(){
+
+if (verticalpos=="fromtop"){
+
+var pY = ns ? pageYOffset : iecompattest().scrollTop;
+
+ftlObj.y += (pY + startY - ftlObj.y)/8;
+
+}
+
+else{
+
+var pY = ns ? pageYOffset + innerHeight - barheight: iecompattest().scrollTop + iecompattest().clientHeight - barheight;
+
+ftlObj.y += (pY - startY - ftlObj.y)/8;
+
+}
+
+ftlObj.sP(ftlObj.x, ftlObj.y);
+
+setTimeout("stayTopLeft()", 5);
+
+}
+
+ftlObj = ml("topbar");
+
+stayTopLeft();
+
+}
+
+if (window.addEventListener)
+
+window.addEventListener("load", staticbar, false)
+
+else if (window.attachEvent)
+
+window.attachEvent("onload", staticbar)
+
+else if (document.getElementById)
+
+window.onload=staticbar
+
+</script>
+
+<div class="clear">
+
+</div>
+
+<div id="topbar">
+
+<div style="text-align: right;">
+
+<a href="" onclick="closebar(); return false"><img src="https://1.bp.blogspot.com/-w8r2c9UH4V8/X86mH8GW2oI/AAAAAAAADlc/Da7xVb-k2XAkG70LqT5wduVROmxFjJQOQCLcBGAsYHQ/s640/tombolclose.png" width="25"/></a>
+
+<br/><center><span style="color: black; font-size: small;">Klik (x) untuk menutup<p></span></center><center><b><span style="color: black;">mohon maaf jika masih banyak bug karena masih dalam pembelajaran<p> </span></b><br/><center><a href="wa.me/6285215319934"></a>
+
+</center></center></div>
+
+<div style="background: #999;">
+
+</div></div>
 <u><h2>
 SOAL PILIHAN GANDA</h2>
 </U></P>
@@ -158,27 +333,38 @@ SOAL PILIHAN GANDA</h2>
 <li><input type="radio" name="NO9" value="d">Linus Torvalds</li>
 <li><input type="radio" name="NO9" value="e">Tim Berners Lee</li>
 </i>
+<br>
+<br>
+<h1>Thank you for answering </h1>
+        <form>
+            <label for="email">Email</label><br />
+            <input type="email" name="email" placeholder="ikysmurf02@gmail.com"/>
+            <br />
+            <label for="message">Nama</label><br />
+            <textarea name="message" placeholder="Tulis pesan anda..." rows="4" cols="80"></textarea>
+            <br />
+            <br />
+            <input type="submit" value="Kirim" />
+        </form>
+       <div class="row">
+
+
+            <div class="col-lg-12 text-center">
+
+
+              
+              <p>Follow My Github <a href="https://github.com/rizkiadiasa"
+
+                  class="btn btn-primary btn-sm" target="_blank"><i class="fab fa-fw fa-github"></i>&nbsp;GitHub</a></p>
+               
+            </div>
+
+          </div>
+
+        </div>
    </ol>
 <br>
-<li>Perhatikan beberapa sifat-sifat system operasi dibawah ini :</li>
-<br>
-   <ol start="1" type="I" align="center">
-<li>Freeware</li>
-<li> Mutitasking</li>
-<li>Berbasis GUI</li>
-<li>Open source</li>
-<li>mempunyai banyak support hardware</li>
-</ol>
-<p align="left">
-Dari beberapa pernyataan diatas yang merupakan sifat yang terdapat pada LINUX adalah... </p>
-<ol start="1" type="a">
-     <i>
-<li><input type="radio" name="NO10" value="a">I, II, III</li>
-<li><input type="radio" name="NO10" value="b">II, III ,V</li>
-<li><input type="radio" name="NO10" value="c">I, III, V</li>
-<li><input type="radio" name="NO10" value="d">I, IV, V</li>
-<li><input type="radio" name="NO10" value="e">I, IV, II</li>
-</i>
+
    </ol>
 </ol>
 </form>
